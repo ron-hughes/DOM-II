@@ -26,12 +26,21 @@ function keyPress(e) {
 
 // event listeners
 const buttonArr = [...buttons]; // create array from HTMLCollection (or NodeList)
-const navArr = [...nav];
+const navArr = [...nav]; // create array from navigation
 
+
+navArr.forEach((e) => { // looping over each menu item in nav
+    e.addEventListener('click', () => {
+        e.style.backgroundColor = "lightgrey";
+    })
+
+
+})
 buttonArr.forEach((e) => {
-    e.addEventListener('mouseover', pushButton)
+    e.addEventListener('mouseover', pushButton) // looping over each element in array and adding event listener to it
     e.addEventListener('mouseout', whiteBack)
 })
+
 
 document.addEventListener('keypress', keyPress)
 
