@@ -2,7 +2,7 @@
     
 
 // sign up buttons
-let nav = document.getElementsByClassName("nav")
+let nav = document.getElementsByClassName("nav-link")
 let buttons = document.getElementsByClassName("btn")
 
 // functions
@@ -29,14 +29,14 @@ const buttonArr = [...buttons]; // create array from HTMLCollection (or NodeList
 const navArr = [...nav]; // create array from navigation
 
 
-navArr.forEach((e) => { // looping over each menu item in nav
+navArr.forEach(function(e, index){ // looping over each menu item in nav
     e.addEventListener('click', () => {
-        e.style.backgroundColor = "lightgrey";
+    e.style.backgroundColor = "red";
     })
-
-
 })
-buttonArr.forEach((e) => {
+
+
+buttonArr.forEach(function(e) {
     e.addEventListener('mouseover', pushButton) // looping over each element in array and adding event listener to it
     e.addEventListener('mouseout', whiteBack)
 })
